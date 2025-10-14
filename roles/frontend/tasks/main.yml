@@ -1,6 +1,11 @@
 - name: Install nginx
   ansible.builtin.yum:
     name: nginx
+    state: absent
+
+- name: Install nginx
+  ansible.builtin.yum:
+    name: nginx
     state: present
 
 
@@ -24,11 +29,6 @@
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-
-- name: Copy Nginx Config
-  ansible.builtin.template:
-    src: nginx.conf
-    dest: /etc/nginx/roboshop.conf
 
 
 - name: Restarting nginx
