@@ -23,7 +23,13 @@
 - name: Copying conf file
   ansible.builtin.template:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Copy Nginx Config
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 
 - name: Restarting nginx
   ansible.builtin.systemd:
