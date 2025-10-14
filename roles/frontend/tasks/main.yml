@@ -20,11 +20,6 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-- name: Recursively remove directory
-  ansible.builtin.template:
-    path: /usr/share/nginx/html
-    state: absent
-
 - name: Copying conf file
   ansible.builtin.template:
     src: roboshop.conf
