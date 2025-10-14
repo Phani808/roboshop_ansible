@@ -16,7 +16,7 @@
 
 - name: Downloading and unzipping
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
     dest: /usr/share/nginx/html
     remote_src: yes
 
@@ -29,3 +29,4 @@
   ansible.builtin.systemd:
     state: restarted
     name: nginx
+    enabled: yes
