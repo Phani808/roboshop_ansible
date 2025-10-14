@@ -6,3 +6,4 @@
 - name: Restarting nginx
   ansible.builtin.systemd:
     state: restarted
+    name: nginx
