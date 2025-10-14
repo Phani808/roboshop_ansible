@@ -28,7 +28,7 @@
 - name: Copy Nginx Config
   ansible.builtin.template:
     src: nginx.conf
-    dest: /etc/nginx/nginx.conf
+    dest: /etc/nginx/roboshop.conf
 
 
 - name: Restarting nginx
