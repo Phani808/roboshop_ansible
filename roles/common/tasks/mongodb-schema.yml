@@ -5,7 +5,10 @@
 
 - name: Install MongoDB Server
   ansible.builtin.yum:
-    name: mongodb-org-shell
+    name: "{{item}}"
+    loop:
+      - mongodb-mongosh
+      - mongodb-org-shell
     state: installed
 
 - name: Load Schema
