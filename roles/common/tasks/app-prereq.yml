@@ -10,7 +10,7 @@
 - name: Creating directoy
   ansible.builtin.file:
     path: /app
-    state: present
+    state: directory
 
 - name: Downloading and unzipping {{component}} code
   ansible.builtin.unarchive:
