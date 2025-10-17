@@ -8,8 +8,8 @@
     name: "{{ item }}"
     state: present
   loop:
-    - mongodb-mongosh
     - mongodb-org-shell
+    - mongodb-mongosh
 
 - name: Load Schema
   community.mongodb.mongodb_shell:
