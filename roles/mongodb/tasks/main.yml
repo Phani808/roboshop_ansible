@@ -1,10 +1,10 @@
 - name: setting up mongo repo
-  ansbile.builtin.copy:
+  ansible.builtin.template:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
 - name: Installing mongo
-  ansbile.builtin.yum:
+  ansible.builtin.yum:
     name: mongodb-org
     state: installed
 
