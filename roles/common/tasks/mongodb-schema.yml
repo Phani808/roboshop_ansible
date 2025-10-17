@@ -1,0 +1,15 @@
+- name: Setting up mongo repo
+  ansible.builtin.template:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install MongoDB Server
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: installed
+
+- name: Load Schema
+  community.mongodb.mongodb_shell:
+    login_host: mongodb-dev.bhargochat.site
+    file: "/app/schema/{{component}}.js"
+    idempotent: yes
