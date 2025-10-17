@@ -11,6 +11,21 @@
     - mongodb-org-shell
     - mongodb-mongosh
 
+- name: Rename db folder to schema
+  ansible.builtin.command:
+    cmd: mv /app/db /app/schema
+  args:
+    removes: /app/db
+    creates: /app/schema
+  when: component == "catalogue"
+- name: Rename master-data.js to catalogue.js
+  ansible.builtin.command:
+    cmd: mv /app/schema/master-data.js /app/schema/catalogue.js
+  args:
+    removes: /app/schema/master-data.js
+    creates: /app/schema/catalogue.js
+  when: component == "catalogue"
+
 - name: Load Schema
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.bhargochat.site
