@@ -1,5 +1,5 @@
 - name: setting up mongo repo
-  ansbile.builtin.template:
+  ansbile.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
