@@ -13,16 +13,14 @@
     gpgkey: https://www.mongodb.org/static/pgp/server-7.0.asc
 
 
-- name: Install MongoDB Server
-  ansible.builtin.yum:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - mongodb-org-shell
-- name: Install MongoDB Shell
-  ansible.builtin.yum:
-    name: mongodb-mongosh
-    state: present
+# - name: Install MongoDB Server
+#   ansible.builtin.yum:
+#     name: "{{ item }}"
+#     state: present
+#   loop:
+#     - mongodb-org-shell
+
+
 
 
 # - name: Rename db folder to schema
