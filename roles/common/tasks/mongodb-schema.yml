@@ -28,6 +28,6 @@
 
 - name: Load Schema
   community.mongodb.mongodb_shell:
-    login_host: mongodb-dev.bhargochat.site
+    login_host: mongodb-dev.bhargochat.space
     file: "/app/schema/{{component}}.js"
     idempotent: yes
