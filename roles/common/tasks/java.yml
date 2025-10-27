@@ -3,9 +3,9 @@
     name: java-11-openjdk
     state: installed
 
-- ame: Installing maven
+- name: Installing maven
   ansible.builtin.shell: dnf install maven -y
-  
+
 - name: App Pre-Req
   ansible.builtin.include_tasks: "app-prereq.yml"
 
