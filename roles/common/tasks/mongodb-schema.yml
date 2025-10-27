@@ -20,6 +20,10 @@
 #   loop:
 #     - mongodb-org-shell
 
+- name: Install MongoDB Shell (mongosh)
+  ansible.builtin.yum:
+    name: mongodb-mongosh
+    state: present
 
 
 
