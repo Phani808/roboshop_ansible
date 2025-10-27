@@ -19,7 +19,11 @@
     state: present
   loop:
     - mongodb-org-shell
-    - mongodb-mongosh
+- name: Install MongoDB Shell
+  ansible.builtin.yum:
+    name: mongodb-mongosh
+    state: present
+
 
 # - name: Rename db folder to schema
 #   ansible.builtin.command:
