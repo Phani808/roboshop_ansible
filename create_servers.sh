@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z01595553FJA368YNS3JY"
-DOMAIN="bhargochat.site"
+ZONE_ID="Z0300511MWOJVGEEPELK"
+DOMAIN="bhargochat.space"
 SG_NAME="allow-all"
 env=dev
 
@@ -41,7 +41,7 @@ if [ -z "${SGID}" ]; then
 fi
 
 
-for component in catalogue cart frontend mongodb; do
+for component in catalogue cart frontend mongodb redis user cart mysql; do
   COMPONENT="${component}-${env}"
   create_ec2
 done
